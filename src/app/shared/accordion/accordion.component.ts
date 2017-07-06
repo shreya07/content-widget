@@ -15,6 +15,9 @@ export class AccordionComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Toggle the accordion on or off
+   */
   toggleAccordion() {
     this.accordionOpen = !this.accordionOpen;
   }

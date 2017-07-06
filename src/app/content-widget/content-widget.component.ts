@@ -1,17 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentService } from "../content.service";
 
-export class Content {
-  private title: string;
-  private content: ContentItem[];
+/**
+ * content document
+ */
+export interface Content {
+  title: string;
+  content: ContentItem[];
 }
 
+/**
+ * Content item
+ */
 export interface ContentItem {
   title: string;
   thumbnail?: string;
   description?: string;
 }
 
+/**
+ * Content widget component
+ */
 @Component({
   selector: 'app-content-widget',
   templateUrl: './content-widget.component.html',
@@ -23,6 +32,8 @@ export class ContentWidgetComponent implements OnInit {
 
   content: Content;
   currentCard = 0;
+  error: string = "There was an error loading the content items";
+  displayError: boolean = false;
 
   constructor(private contentService: ContentService) { }
 
@@ -30,7 +41,10 @@ export class ContentWidgetComponent implements OnInit {
     this.contentService.getContent('/assets/data/content.json').then(content => {
       console.log(content);
       this.content = content;
-    })
+    }).catch(error => {
+      console.log(error);
+      this.displayError = true;
+    });
   }
 
   /**
@@ -46,10 +60,18 @@ export class ContentWidgetComponent implements OnInit {
     }
   }
 
+  /**
+   * Display next content item
+   * @param index current item index
+     */
   nextCard(index) {
     this.currentCard = index + 1;
   }
 
+  /**
+   * Display previous content item
+   * @param index current item index
+     */
   previousCard(index) {
     this.currentCard = index - 1;
   }

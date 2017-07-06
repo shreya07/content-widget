@@ -1,4 +1,4 @@
-<div *ngIf="content" class="container">
+<div *ngIf="content && !displayError" class="container">
 
   <!--accordion component can be found in the shared-->
   <app-accordion [title]="content.title">
@@ -45,5 +45,11 @@
       </div>
 
     </div>
+  </app-accordion>
+</div>
+
+<div *ngIf="displayError" class="container">
+  <app-accordion [title]="'Error'">
+    <div class="error">{{error}}</div>
   </app-accordion>
 </div>
