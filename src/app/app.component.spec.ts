@@ -2,12 +2,16 @@
 
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { ContentWidgetComponent } from "./content-widget/content-widget.component";
+import { AccordionComponent } from "./shared/accordion/accordion.component";
 
 describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        ContentWidgetComponent,
+        AccordionComponent
       ],
     });
     TestBed.compileComponents();

@@ -4,14 +4,23 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ContentWidgetComponent } from './content-widget.component';
+import { AccordionComponent } from "../shared/accordion/accordion.component";
+import { ContentService } from "../content.service";
+import { Http } from "@angular/http";
 
 describe('ContentWidgetComponent', () => {
   let component: ContentWidgetComponent;
   let fixture: ComponentFixture<ContentWidgetComponent>;
+  let httpStub;
 
   beforeEach(async(() => {
+    httpStub = {
+      value: true
+    };
+
     TestBed.configureTestingModule({
-      declarations: [ ContentWidgetComponent ]
+      declarations: [ ContentWidgetComponent, AccordionComponent ],
+      providers: [ContentService, { provide: Http, useValue: httpStub }]
     })
     .compileComponents();
   }));
