@@ -1,0 +1,50 @@
+.container {
+  margin-top: 20px;
+
+  .card {
+    padding: 0 15px;
+
+    .card-body {
+      padding: 20px;
+      border-bottom: 1px #EAEAD1 solid;
+
+      .thumbnail {
+        width: 100%;
+        border: none;
+        margin: 0;
+      }
+    }
+
+    .card-footer {
+      padding: 10px;
+
+      .link {
+        display: flex;
+        color: #448515;
+        cursor: pointer;
+
+        a {
+          color: #448515;
+        }
+
+        .glyphicon {
+          font-size: 22px;
+        }
+
+        .glyphicon-triangle-left {
+          margin-right: 5px;
+        }
+
+        .glyphicon-triangle-right {
+          margin-left: 5px;
+        }
+      }
+
+      .link:hover {
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

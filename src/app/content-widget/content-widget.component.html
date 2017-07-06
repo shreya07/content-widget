@@ -1,3 +1,49 @@
-<p>
-  content-widget works!
-</p>
+<div *ngIf="content" class="container">
+
+  <!--accordion component can be found in the shared-->
+  <app-accordion [title]="content.title">
+
+    <!--accordion content in the form of a card - ngSwitch determines which content card is shown-->
+    <div [ngSwitch]="currentCard">
+
+      <div *ngFor="let contentItem of content.content; let i = index">
+
+        <!--Content card for each content item in the array-->
+        <div *ngSwitchCase="i" class="card">
+
+          <!--Content card body-->
+          <div class="card-body row" >
+              <div class="col-md-4 col-xs-4">
+                <img [src]="getThumbnailPath(contentItem.thumbnail)" class="thumbnail"/>
+              </div>
+              <div class="col-md-8 col-xs-8" [innerHTML]="contentItem.description" ></div>
+          </div>
+
+          <!--Content card footer-->
+          <div class="card-footer row">
+
+            <!--Do not show previous link if it's the first content-->
+            <div class="pull-left" *ngIf="i-1 > -1">
+              <div (click)="previousCard(i)" class="link">
+                <span class="glyphicon glyphicon-triangle-left"></span>
+                <a>{{content.content[i-1].title}}</a>
+              </div>
+            </div>
+
+            <!--Do not show the next link if it's the last content item-->
+            <div class="pull-right" *ngIf="i+1 < content.content.length">
+              <div (click)="nextCard(i)" class="link">
+                <a>{{content.content[i+1].title}}</a>
+                <span class="glyphicon glyphicon-triangle-right"></span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </app-accordion>
+</div>

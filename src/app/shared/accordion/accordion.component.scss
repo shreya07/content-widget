@@ -1,0 +1,41 @@
+.accordion {
+
+  .accordion-header {
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 2px 0px 3px #DDE0D2;
+
+    //Gradient for the header background
+    background: #EAEAD1; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(right, #C7C6A7, #EAEAD1); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(left, #C7C6A7, #EAEAD1); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(left, #C7C6A7, #EAEAD1); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to left, #C7C6A7, #EAEAD1);
+
+    padding: 15px 20px;
+
+    .glyphicon {
+      color: #448515;
+    }
+
+    .glyphicon-file {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+
+    .accordion-label {
+      font-weight: bold;
+      font-size: 14px;
+      color: #000;
+      text-decoration: none;
+    }
+
+    .accordion-arrow {
+      margin-top: 3px;
+    }
+  }
+
+  .accordion-content {
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 2px 2px 3px #DDE0D2;
+  }
+}

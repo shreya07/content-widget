@@ -1,3 +1,17 @@
-<p>
-  accordion works!
-</p>
+<div class="row justify-content-md-center">
+  <div class="col-10 col-md-auto col-xs-auto accordion">
+
+    <!--accordion header-->
+    <div class="accordion-header" (click)="toggleAccordion()" [ngClass]="{'accordion-open': accordionOpen}" tabindex="0">
+      <span class="glyphicon glyphicon-file pull-left"></span>
+      <a tabindex="-1" class="accordion-label">{{accordionTitle}}</a>
+      <span class="glyphicon pull-right accordion-arrow" [ngClass]="{'glyphicon-triangle-bottom': !accordionOpen, 'glyphicon-triangle-top': accordionOpen}"></span>
+    </div>
+
+    <!--accordion content/body-->
+    <div class="accordion-content" [hidden]="!accordionOpen">
+      <ng-content></ng-content>
+    </div>
+
+  </div>
+</div>

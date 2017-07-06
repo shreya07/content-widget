@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ContentWidgetComponent } from './content-widget/content-widget.component';
 import { ContentService } from "./content.service";
 import { AccordionComponent } from './shared/accordion/accordion.component';
+import { AlertModule } from "ngx-bootstrap/index";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AccordionComponent } from './shared/accordion/accordion.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AlertModule.forRoot()
   ],
   providers: [ContentService],
   bootstrap: [AppComponent]
