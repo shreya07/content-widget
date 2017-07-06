@@ -1,5 +1,10 @@
 # GumtreeContentWidget
 
+[Demo link](https://content-widget.appspot.com)
+
+## Install
+Run `npm install` to download all the dependencies - especially angular-cli
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
